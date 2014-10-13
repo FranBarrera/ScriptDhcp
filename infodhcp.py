@@ -16,7 +16,7 @@ if opcion == '-l':
     print 'direcciones reservadas'
     print ips_res
 elif opcion in ips:
-    hardware = commands.getoutput('cat /var/lib/dhcp/dhcpd.leases |grep -A6 "%s" |grep "hardware ethernet"|cut -d " "" -f 5' % sys.argv[1])
+    hardware = commands.getoutput('cat /var/lib/dhcp/dhcpd.leases |grep -A6 "%s" |grep "hardware ethernet"|cut -d " " -f 5' % sys.argv[1])
     hardware = hardware.replace(";","")
     print 'La ip está concedida'
     print hardware
